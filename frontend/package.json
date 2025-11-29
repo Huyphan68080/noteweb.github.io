@@ -15,11 +15,9 @@
   },
   "scripts": {
     "start": "set PORT=3000 && react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && xcopy build ..\\docs /E /I /Y",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

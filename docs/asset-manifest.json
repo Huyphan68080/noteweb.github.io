@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/noteweb.github.io/static/css/main.4f62765f.css",
+    "main.js": "/noteweb.github.io/static/js/main.fc966b54.js",
+    "index.html": "/noteweb.github.io/index.html",
+    "main.4f62765f.css.map": "/noteweb.github.io/static/css/main.4f62765f.css.map",
+    "main.fc966b54.js.map": "/noteweb.github.io/static/js/main.fc966b54.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4f62765f.css",
+    "static/js/main.fc966b54.js"
+  ]
+}
