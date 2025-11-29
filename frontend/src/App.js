@@ -18,8 +18,17 @@ function App() {
     }
   }, []);
 
+  // Get basename from window location
+  const getBasename = () => {
+    const pathname = window.location.pathname;
+    if (pathname.includes('/noteweb.github.io')) {
+      return '/noteweb.github.io';
+    }
+    return '/';
+  };
+
   return (
-    <Router basename="/noteweb.github.io">
+    <Router basename={getBasename()}>
       <ThemeProvider>
         <AuthProvider>
           <Routes>
