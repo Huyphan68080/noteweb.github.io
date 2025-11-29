@@ -64,13 +64,6 @@ npm start
 ```
 
 Ứng dụng sẽ mở tại `http://localhost:3000`
-
-## 🔐 Đăng Nhập
-
-**Tài khoản Demo:**
-- Username: `HuyPhan`
-- Password: `Huyphan19082008`
-
 ## 📁 Cấu Trúc Dự Án
 
 ```
