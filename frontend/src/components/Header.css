@@ -1,0 +1,156 @@
+.header {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .header {
+  background: rgba(30, 30, 30, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-brand h1 {
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .user-info {
+  color: #e0e0e0;
+}
+
+.user-icon {
+  font-size: 1.2rem;
+  color: #667eea;
+}
+
+.trash-btn,
+.theme-btn,
+.logout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.trash-btn:hover,
+.theme-btn:hover,
+.logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.trash-btn svg,
+.theme-btn svg {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: row;
+    gap: 8px;
+    padding: 12px 15px;
+  }
+
+  .header-brand h1 {
+    font-size: 1.2rem;
+  }
+
+  .header-user {
+    width: auto;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+
+  .user-info {
+    display: none;
+  }
+
+  .trash-btn,
+  .theme-btn,
+  .logout-btn {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+    gap: 4px;
+  }
+
+  .trash-btn svg,
+  .theme-btn svg {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    padding: 10px 12px;
+    gap: 6px;
+  }
+
+  .header-brand h1 {
+    font-size: 1.1rem;
+  }
+
+  .header-user {
+    gap: 4px;
+  }
+
+  .user-info {
+    display: none;
+  }
+
+  .trash-btn,
+  .theme-btn,
+  .logout-btn {
+    padding: 6px 8px;
+    font-size: 0.85rem;
+    border-radius: 6px;
+  }
+
+  .trash-btn svg,
+  .theme-btn svg,
+  .logout-btn svg {
+    font-size: 1rem;
+  }
+}
+

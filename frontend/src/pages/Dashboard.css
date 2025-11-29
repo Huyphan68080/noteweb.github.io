@@ -1,0 +1,322 @@
+.dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding-bottom: 40px;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .dashboard {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.dashboard-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.dashboard-header {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.dashboard-header h1 {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 25px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .dashboard-header h1 {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 12px;
+  padding: 0 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .search-box {
+  background: #2a2a3e;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.search-icon {
+  color: #999;
+  margin-right: 10px;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .search-icon {
+  color: #666;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  padding: 12px 0;
+  font-size: 1rem;
+  background: transparent;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .search-box input {
+  color: #e0e0e0;
+}
+
+.search-box input::placeholder {
+  color: #999;
+}
+
+body.dark-mode .search-box input::placeholder {
+  color: #666;
+}
+
+.search-box input:focus {
+  outline: none;
+}
+
+.controls select {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 2px solid white;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+body.dark-mode .controls select {
+  border-color: #2a2a3e;
+  background: rgba(42, 42, 62, 0.9);
+  color: #e0e0e0;
+}
+
+.controls select:hover {
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .controls select:hover {
+  background: rgba(42, 42, 62, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-add-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: white;
+  color: #667eea;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+}
+
+body.dark-mode .btn-add-note {
+  background: #2a2a3e;
+  color: #a0b0ff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-add-note:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  background: #f5f5f5;
+}
+
+body.dark-mode .btn-add-note:hover {
+  background: #3a3a4e;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .modal-content {
+  background: #1e1e2e;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.notes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.notes-section h2 {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .notes-section h2 {
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.loading,
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: white;
+  font-size: 1.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .loading,
+body.dark-mode .empty-state {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+  .dashboard-header h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  .search-box {
+    min-width: auto;
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-add-note {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    padding-bottom: 20px;
+  }
+
+  .dashboard-content {
+    padding: 12px;
+  }
+
+  .dashboard-header {
+    margin-top: 20px;
+    margin-bottom: 25px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .controls {
+    gap: 8px;
+    flex-direction: column;
+  }
+
+  .search-box {
+    padding: 0 12px;
+    border-radius: 10px;
+  }
+
+  .search-box input {
+    padding: 10px 0;
+    font-size: 16px;
+  }
+
+  .controls select {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+
+  .btn-add-note {
+    font-size: 0.95rem;
+    padding: 10px 16px;
+    gap: 6px;
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .modal-overlay {
+    padding: 12px;
+  }
+
+  .modal-content {
+    border-radius: 12px;
+    max-height: 95vh;
+  }
+
+  .notes-section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .loading,
+  .empty-state {
+    padding: 40px 15px;
+    font-size: 1rem;
+    border-radius: 10px;
+  }
+}
