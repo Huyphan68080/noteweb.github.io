@@ -34,15 +34,6 @@ cd backend
 npm install
 ```
 
-3. Tạo file `.env` (nếu chưa có):
-```
-MONGODB_URI=mongodb+srv://huyphan68080_db_user:LebzEET4MIjaEzk0@cluster0.ogoqgxu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-JWT_SECRET=your_jwt_secret_key_change_this
-PORT=5000
-ADMIN_USERNAME=HuyPhan
-ADMIN_PASSWORD=Huyphan19082008
-```
-
 4. Chạy server:
 ```bash
 npm start
