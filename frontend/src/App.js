@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
@@ -9,8 +9,17 @@ import Trash from './pages/Trash';
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    // Handle GitHub Pages redirect
+    const q = sessionStorage.getItem('redirect');
+    if (q) {
+      sessionStorage.removeItem('redirect');
+      window.history.replaceState(null, null, q);
+    }
+  }, []);
+
   return (
-    <Router>
+    <Router basename="/noteweb.github.io">
       <ThemeProvider>
         <AuthProvider>
           <Routes>
